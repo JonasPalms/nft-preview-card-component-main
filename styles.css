@@ -17,6 +17,10 @@ body {
     font-size: 18px;
     font-family: "Outfit", sans-serif;
     color: var(--soft-blue);
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    flex-direction: column;
 }
 
 .card {
@@ -27,6 +31,7 @@ body {
     background-color: var(--dark-blue-bg);
     padding: 1.5rem; 
     border-radius: 10px;
+    
 }
 
 .container {
@@ -53,13 +58,17 @@ h1:hover {
 }
 
 .card-image {
-    margin: 0; 
+    margin: 0;
+    position: relative; 
 }
 
 .card-image img {
     object-fit: contain;
     width: 100%;
+    height: auto; 
     border-radius: 10px;
+    margin: 0; 
+    overflow: hidden; 
     
 }
 
@@ -124,5 +133,29 @@ h1:hover {
 
 footer {
     margin-top: 20px; 
+    font-size: 0.8rem; 
 }
 
+footer a {
+    color: white; 
+}
+
+.card__more {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(0, 255, 247, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 300ms ease-in-out;
+    border-radius: 5px;
+  }
+  
+  .card-image:hover .card__more, .card-image:focus .card__more {
+    opacity: 1;
+  }
+  
